@@ -3,7 +3,7 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = $_POST["usuario"];
+    $usuario = $_POST["codigo"];
     $contra = $_POST["contra"];
 
     $conexion = mysqli_connect("localhost", "root", "", "marcacion");
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error al conectar con la base de datos: " . mysqli_connect_error());
     }
 
-    $consulta = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND contra = '$contra'";
+    $consulta = "SELECT * FROM usuarios WHERE codigo = '$usuario' AND contra = '$contra'";
     $resultado = mysqli_query($conexion, $consulta);
 
     if (mysqli_num_rows($resultado) == 1) {
@@ -37,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -55,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                                 <div class="form-outline mb-4">
                                     <h4 class="fw-bold" id="Titulo">Usuario</h4><hr>
-                                    <input type="text" name="usuario" id="usuario" class="form-control" required placeholder="Ingrese su usuario" />
+                                    <input type="text" name="codigo" id="codigo" class="form-control" required placeholder="Ingrese su usuario" />
                                 </div>
                                 <br>
                                 <div class="form-outline mb-4">
@@ -79,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-block mb-4" id="Entrar">Entrar</button>
                                 <div class="text-center">
-                                    <h5 id="Usuario">No es usuario? <a href="#!">Registrese</a></h5>
+                                    <h5 id="Usuario">No es usuario? <a href="registro.php">Registrese</a></h5>
                                 </div>
                             </form>
                         </div>

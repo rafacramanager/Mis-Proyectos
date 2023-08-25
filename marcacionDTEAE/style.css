@@ -1,9 +1,25 @@
-grid-container {
+.grid-container {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr 1fr; /* Divide en 2 columnas */
+  gap: 20px; /* Espacio entre elementos */
 }
 
+.item {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+body{
+  background-color: #303845;
+  margin: 0;
+}
+
+/* Media query para diseño responsive */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Cambia a 1 columna en pantallas pequeñas */
+  }
+}
 
 
 #Login {
@@ -30,9 +46,3 @@ grid-container {
 
 
 
-/* Media query para diseño responsive */
-@media (min-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}

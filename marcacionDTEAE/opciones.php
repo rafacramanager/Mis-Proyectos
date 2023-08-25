@@ -18,10 +18,10 @@
     <div class="container fluid" align="center">
         <br>
         <br>
-        <img class="img fluid" src="img\logo-mined-2022.png" alt="" width="150px">
+        <img class="img fluid" src="img/Mined.jpeg" alt="" width="400">
         <br>
         <br>
-        <h3>Aplicación de Marcación Diaria</h3>
+        <h3 class="fw-bold" id="Subtitulo">Aplicación de Marcación Diaria</h3>
 
         <div class="grid-container">
             <div class="item">
