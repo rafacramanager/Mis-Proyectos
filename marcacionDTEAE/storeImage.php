@@ -19,5 +19,3 @@
     file_put_contents($file, $image_base64);
 
     print_r($fileName);
-    
-?>

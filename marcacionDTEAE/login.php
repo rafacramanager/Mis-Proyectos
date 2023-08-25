@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($resultado) == 1) {
         // El usuario y la contraseña son correctos
         // echo "Inicio de sesión exitoso";
-        header ("location: opciones.php");
+        header("location: opciones.php");
     } else {
         // El usuario y/o la contraseña son incorrectos
         //echo "<div class='alert alert-danger' role='alert' align='center'>Usuario y/o contraseña incorrectos</div>";
-    
+
         echo "<div class='alert alert-danger' role='alert'>Usuario o contraseña incorrectos! </div>";
     }
 

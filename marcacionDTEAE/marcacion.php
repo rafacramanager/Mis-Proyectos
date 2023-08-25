@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Marcación Diaria</title>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <style type="text/css">
         #results {
             padding: 20px;
@@ -49,7 +48,6 @@
     <!-- Configure a few settings and attach camera -->
 
     <script language="JavaScript">
-
         Webcam.set({
             width: 490,
             height: 390,
@@ -57,8 +55,9 @@
             jpeg_quality: 90
         });
         Webcam.attach('#my_camera');
+
         function take_snapshot() {
-            Webcam.snap(function (data_uri) {
+            Webcam.snap(function(data_uri) {
                 $(".image-tag").val(data_uri);
                 document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
             });
