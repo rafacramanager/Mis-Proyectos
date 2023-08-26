@@ -56,6 +56,7 @@ $conn->close();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Crear Usuario</title>
+    <link rel="icon" href="img/Mined.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -66,7 +67,7 @@ $conn->close();
             <div class="col-12">
                 <div class="row g-0 bg-body-secondary position-relative" id="Login">
                     <div class="col-md-6 mb-md-0 p-md-4">
-                        <img src="img/Ministerio.png" class="w-100" alt="prueba">
+                        <img src="img/Ministerio.png" class="w-100 img-fluid" alt="prueba">
                     </div>
                     <div class="col-md-6 p-4 ps-md-0">
 
@@ -89,7 +90,6 @@ $conn->close();
                                     <input type="text" name="contra" id="contra" class="form-control" required placeholder="Ingrese su contraseña" />
                                 </div><br>
 
-                                <!-- Agregamos los campos de entrada del primer formulario -->
                                 <div class="form-outline mb-4">
                                     <h4 class="fw-bold" id="Titulo">Nombre</h4>
                                     <hr>
@@ -108,13 +108,15 @@ $conn->close();
                                 <div class="form-outline mb-4">
                                     <h4 class="fw-bold" id="Titulo">Teléfono</h4>
                                     <hr>
-                                    <input type="tel" name="telefono" id="telefono" class="form-control" required placeholder="Ingrese su número de teléfono" />
+                                    <input type="tel" name="telefono" id="telefono" class="form-control" required placeholder="Ingrese su teléfono" />
                                 </div><br>
-                                <!-- ... (otros campos de entrada del primer formulario) ... -->
 
-                                <button type="submit" name="registro" value="Registrar" class="btn btn-primary btn-block mb-4" id="Entrar">Registar</button>
+                                <!-- ... (otros campos de entrada del formulario) ... -->
+
+                                <button type="submit" name="registro" value="Registrar" class="btn btn-primary btn-block mb-4" id="Registro">Registrar</button>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -38,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Iniciar Cesion</title>
+    <link rel="icon" href="img/Mined.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
@@ -52,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-12">
                 <div class="row g-0 bg-body-secondary position-relative" id="Login">
                     <div class="col-md-6 mb-md-0 p-md-4">
-                        <img src="img/Ministerio.png" class="w-100" alt="prueba">
+                        <img src="img/Ministerio.png" class="w-100 img-fluid" alt="Logo">
                     </div>
                     <div class="col-md-6 p-4 ps-md-0">
 
@@ -84,9 +85,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <a href="index.php">
-                                            <h6 class="fw-normal" id="Subtitulo">¿Olvido sus credenciales?</h6>
-                                        </a>
+                                        <div class="d-flex justify-content-center">
+                                            <a href="index.php">
+                                                <h6 class="fw-normal" id="Subtitulo">¿Olvido sus credenciales?</h6>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-block mb-4" id="Entrar">Entrar</button>
