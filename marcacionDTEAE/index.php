@@ -18,22 +18,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($resultado) == 1) {
         header("location: opciones.php");
     } else {
-        echo "<div class='alert alert-danger' role='alert' align='center'>Usuario o contraseña incorrectos!</div>";
+        echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                <use xlink:href="#exclamation-triangle-fill"/>
+            </svg>
+            <div>
+                Usuario o contraseña no encontrada...
+            </div>
+        </div>';
     }
 
     mysqli_close($conexion);
 }
 ?>
-
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Iniciar Cesion</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
 </head>
 
 <body>
@@ -43,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-12">
                 <div class="row g-0 bg-body-secondary position-relative" id="Login">
                     <div class="col-md-6 mb-md-0 p-md-4">
-                        <img src="img/Mined.jpeg" class="w-100" alt="prueba">
+                        <img src="img/Ministerio.png" class="w-100" alt="prueba">
                     </div>
                     <div class="col-md-6 p-4 ps-md-0">
 
@@ -55,12 +64,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <form action="index.php" method="POST">
 
                                 <div class="form-outline mb-4">
-                                    <h4 class="fw-bold" id="Titulo">Usuario</h4><hr>
+                                    <h4 class="fw-bold" id="Titulo">Usuario</h4>
+                                    <hr>
                                     <input type="text" name="codigo" id="codigo" class="form-control" required placeholder="Ingrese su usuario" />
                                 </div>
                                 <br>
                                 <div class="form-outline mb-4">
-                                    <h4 class="fw-bold" id="Titulo">Contraseña</h4><hr>
+                                    <h4 class="fw-bold" id="Titulo">Contraseña</h4>
+                                    <hr>
                                     <input type="password" name="contra" id="contra" class="form-control" required placeholder="Ingrese su contraseña" />
                                 </div><br>
                                 <div class="row mb-4">
@@ -74,13 +85,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                     <div class="col">
                                         <a href="index.php">
-                                            <h6 class="fw-normal" id="Subtitulo">Olvido sus datos?</h6>
+                                            <h6 class="fw-normal" id="Subtitulo">¿Olvido sus credenciales?</h6>
                                         </a>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-block mb-4" id="Entrar">Entrar</button>
                                 <div class="text-center">
-                                    <h5 id="Usuario">No es usuario? <a href="registro.php">Registrese</a></h5>
+                                    <h5 id="Usuario">¿No tienes una cuenta? <a href="registro.php">Registrar</a></h5>
                                 </div>
                             </form>
                         </div>
@@ -114,7 +125,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 passwordInput.type = "password";
             }
         });
+        // Agregar un evento para limpiar el formulario después de enviarlo
+        loginForm.addEventListener("submit", function() {
+            // Restablecer los valores de los campos del formulario
+            passwordInput.type = "password";
+            passwordInput.value = "";
+            showPasswordCheckbox.checked = false;
+            showPasswordCheckbox.disabled = true;
+        });
     </script>
+
+
+
+
 </body>
 
 </html>

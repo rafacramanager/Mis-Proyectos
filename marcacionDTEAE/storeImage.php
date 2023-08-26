@@ -1,21 +1,21 @@
 <?php
 
-    $img = $_POST['image'];
+$img = $_POST['image'];
 
-    $folderPath = "upload/";
+$folderPath = "upload/";
 
-    $image_parts = explode(";base64,", $img);
+$image_parts = explode(";base64,", $img);
 
-    $image_type_aux = explode("image/", $image_parts[0]);
+$image_type_aux = explode("image/", $image_parts[0]);
 
-    $image_type = $image_type_aux[1];
+$image_type = $image_type_aux[1];
 
-    $image_base64 = base64_decode($image_parts[1]);
+$image_base64 = base64_decode($image_parts[1]);
 
-    $fileName = uniqid() . '.png';
+$fileName = uniqid() . '.png';
 
-    $file = $folderPath . $fileName;
+$file = $folderPath . $fileName;
 
-    file_put_contents($file, $image_base64);
+file_put_contents($file, $image_base64);
 
-    print_r($fileName);
+print_r($fileName);
